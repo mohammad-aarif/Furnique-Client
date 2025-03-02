@@ -3,10 +3,15 @@
     display: grid;
     grid-template-columns: repeat(8, minmax(0, 1fr));
     align-items: center;
-    background: #fff4be;
+    background: #fffae0;
     overflow: hidden;
 }
 .header-info h1  {
+    background: rgb(34,122,17);
+    background: linear-gradient(308deg, rgba(34,122,17,1) 46%, rgba(42,152,22,1) 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
     font-size: 3.5rem;
-    line-height: 3.4rem;
+    line-height: 3.9rem;
 }
