@@ -2,3 +2,7 @@
 input:focus {
     outline: none;
 }
+h1{
+    font-size: larger;
+    font-weight: 500;
+}
