@@ -1,33 +1,34 @@
 import ShopNow from '../../../Components/Buttons/ShopNow/ShopNow';
+import CatBanner from '../../../Components/Catagories/CatBanner';
 import './hotcategories.css'
 const HotCategories = () => {
     return (
         <div className="hot-categories py-8 px-12 flex-col md:flex-row">
-            <div className="relative z-10">
-                <div className="overlay bg-[#03500fc4]">
-                    <h2 className='text-3xl font-bold text-amber-300'>Sofa</h2>
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, voluptates.</p>
-                    <ShopNow link='/'/>                   
-                </div>
-                <img src="/src/assets/sofa.jpg" alt="" />
-            </div>
+            <CatBanner 
+                    className="" 
+                    bg='bg-[#ab6510b3]'
+                    img = '/src/assets/easy-chair.jpg'
+                    title = 'Chair'
+                    desc = 'Cozy, stylish and ultra comfortable'
+                    link = '/'
+                    />
             <div className="flex-col">
-                <div className="h-1/2 relative z-10">
-                    <div className="overlay bg-[#8f4b21c1]">
-                        <h2 className='text-3xl font-bold text-amber-300'>Sofa</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, voluptates.</p>
-                        <ShopNow link='/'/>                   
-                    </div>
-                    <img src="/src/assets/bed.jpg" alt="" />
-                </div>
-                <div className="h-1/2 relative z-10">
-                    <div className="overlay bg-[#ab6510b3]">
-                        <h2 className='text-3xl font-bold text-amber-300'>Sofa</h2>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quasi, voluptates.</p>
-                        <ShopNow link='/'/>                   
-                    </div>
-                    <img src="/src/assets/easy-chair.jpg" alt="" />
-                </div>
+                <CatBanner 
+                    className="h-1/2" 
+                    bg='bg-[#8f4b21c1]'
+                    img = '/src/assets/bed.jpg'
+                    title = 'Bed'
+                    desc = 'Relax, recharge, and sleep in comfort'
+                    link = '/'
+                    />
+                <CatBanner 
+                    className="h-1/2" 
+                    bg='bg-[#03500fc4]'
+                    img = '/src/assets/sofa.jpg'
+                    title = 'Sofa'
+                    desc = 'Stylish, comfy and inviting.'
+                    link = '/products'
+                    />
             </div>                    
         </div>
     );
