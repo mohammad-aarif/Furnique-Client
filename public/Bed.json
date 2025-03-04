@@ -1,0 +1,450 @@
+[
+  {
+      "title": "BED- NUVORA",
+      "sub_title": "BDH-389-3-1-20 (Double)",
+      "sku": "747701",
+      "price": 31875,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2025-02/bdh-389.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2025-02/bdh-389--ffg.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The BED- NUVORA is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "bed",
+          "luxury",
+          "comfort",
+          "modern",
+          "metal"
+      ],
+      "dimension": {
+          "length": 1997,
+          "width": 1538,
+          "height": 876
+      },
+      "stock": 14,
+      "createdAt": "2025-03-01T02:54:42.777968"
+  },
+  {
+      "title": "BED- COZEVA",
+      "sub_title": "BDH-388-3-1-20 (Double)",
+      "sku": "747700",
+      "price": 30000,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2025-02/bdh-388.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2025-02/bdh-388--dfdfdf.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The BED- COZEVA is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "bed",
+          "bedroom",
+          "furniture",
+          "luxury",
+          "metal"
+      ],
+      "dimension": {
+          "length": 2196,
+          "width": 1987,
+          "height": 831
+      },
+      "stock": 31,
+      "createdAt": "2025-03-01T02:54:42.777985"
+  },
+  {
+      "title": "WOODEN BED- MELLOW",
+      "sub_title": "BDH-380-3-1-20 (King)",
+      "sku": "746647",
+      "price": 58750,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2025-02/bdh-380.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2025-02/bdh-380-b.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The WOODEN BED- MELLOW is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "wooden",
+          "furniture",
+          "metal",
+          "comfort",
+          "classic"
+      ],
+      "dimension": {
+          "length": 2035,
+          "width": 1929,
+          "height": 1108
+      },
+      "stock": 15,
+      "createdAt": "2025-03-01T02:54:42.777995"
+  },
+  {
+      "title": "SLUMBER",
+      "sub_title": "BDH-148-1-1-20-KING",
+      "sku": "747550",
+      "price": 18775,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2025-01/bdh-148-w.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2025-01/bdh-148-df.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The SLUMBER is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "slumber",
+          "durable",
+          "luxury",
+          "wooden",
+          "bedroom"
+      ],
+      "dimension": {
+          "length": 1992,
+          "width": 1231,
+          "height": 1086
+      },
+      "stock": 16,
+      "createdAt": "2025-03-01T02:54:42.778003"
+  },
+  {
+      "title": "BED- EVELYN",
+      "sub_title": "BDH-387-3-1-20 (Double)",
+      "sku": "747698",
+      "price": 31250,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-12/bdh-387.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-12/bdh-387--3.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The BED- EVELYN is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "bed-",
+          "bed",
+          "bedroom",
+          "classic",
+          "wooden"
+      ],
+      "dimension": {
+          "length": 2064,
+          "width": 1727,
+          "height": 828
+      },
+      "stock": 18,
+      "createdAt": "2025-03-01T02:54:42.778011"
+  },
+  {
+      "title": "BED- MALAY",
+      "sub_title": "BDH-386-3-1-20 (King)",
+      "sku": "747695",
+      "price": 70625,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-12/bdh-386.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-12/bdh-386-2.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The BED- MALAY is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "bed-",
+          "wooden",
+          "luxury",
+          "comfort",
+          "modern"
+      ],
+      "dimension": {
+          "length": 2039,
+          "width": 1749,
+          "height": 821
+      },
+      "stock": 42,
+      "createdAt": "2025-03-01T02:54:42.778018"
+  },
+  {
+      "title": "Metal Bed-ASTORIA",
+      "sub_title": "BDD-201-2-3-66(WITH PATATON)(DUPLEX)",
+      "sku": "811292",
+      "price": 26900,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-11/bdd-201vray2.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-11/bdd-201vraydffg.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The Metal Bed-ASTORIA is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "metal",
+          "wooden",
+          "classic",
+          "comfort",
+          "durable"
+      ],
+      "dimension": {
+          "length": 1934,
+          "width": 1252,
+          "height": 1185
+      },
+      "stock": 23,
+      "createdAt": "2025-03-01T02:54:42.778026"
+  },
+  {
+      "title": "WOODEN BED- CELESTIA",
+      "sub_title": "BDH-381-3-1-20 (Double)",
+      "sku": "747425",
+      "price": 30350,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-11/bdh-381.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-11/bdh-381vraydenffoffiser.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The WOODEN BED- CELESTIA is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "wooden",
+          "durable",
+          "classic",
+          "comfort",
+          "bed"
+      ],
+      "dimension": {
+          "length": 1949,
+          "width": 1740,
+          "height": 967
+      },
+      "stock": 45,
+      "createdAt": "2025-03-01T02:54:42.778041"
+  },
+  {
+      "title": "BED- GLACE",
+      "sub_title": "BDH-385-3-1-20 (Double)",
+      "sku": "747477",
+      "price": 31250,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-09/bdh-385-----1.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-09/bdh-385rgbcolor.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The BED- GLACE is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "bed-",
+          "wooden",
+          "furniture",
+          "metal",
+          "modern"
+      ],
+      "dimension": {
+          "length": 2123,
+          "width": 1266,
+          "height": 1082
+      },
+      "stock": 49,
+      "createdAt": "2025-03-01T02:54:42.778050"
+  },
+  {
+      "title": "BED- SNOWDROP",
+      "sub_title": "BDH-384-3-1-20 (Double)",
+      "sku": "747476",
+      "price": 24350,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-09/bdh-384-----2.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-09/bdh-384rgbcogglor.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The BED- SNOWDROP is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "bed-",
+          "comfort",
+          "bedroom",
+          "bed",
+          "luxury"
+      ],
+      "dimension": {
+          "length": 2179,
+          "width": 1575,
+          "height": 860
+      },
+      "stock": 30,
+      "createdAt": "2025-03-01T02:54:42.778062"
+  },
+  {
+      "title": "HANOI",
+      "sub_title": "BDH-150-1-1-33-BED-SINGLE",
+      "sku": "747346",
+      "price": 6250,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-10/bdh-150.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-07/bdh-150-raydenoiser0000.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The HANOI is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "hanoi",
+          "bed",
+          "wooden",
+          "modern",
+          "furniture"
+      ],
+      "dimension": {
+          "length": 2200,
+          "width": 1274,
+          "height": 1016
+      },
+      "stock": 37,
+      "createdAt": "2025-03-01T02:54:42.778074"
+  },
+  {
+      "title": "WOODEN BED- FLORIDA CLASSIC",
+      "sub_title": "BDH-371-3-1-20 (Double)-Without Through",
+      "sku": "746588",
+      "price": 30000,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-10/bdh-371view-fb-post.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-01/bdh-371viewh-01.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The WOODEN BED- FLORIDA CLASSIC is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "wooden",
+          "bed",
+          "bedroom",
+          "furniture",
+          "wooden"
+      ],
+      "dimension": {
+          "length": 1918,
+          "width": 1266,
+          "height": 856
+      },
+      "stock": 44,
+      "createdAt": "2025-03-01T02:54:42.778084"
+  },
+  {
+      "title": "BED- ORION",
+      "sub_title": "BDH-147-1-1-20-(Double Bed)",
+      "sku": "745844",
+      "price": 18500,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-10/bdh-147.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2023-11/bdh-147view-0.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The BED- ORION is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "bed-",
+          "wooden",
+          "classic",
+          "metal",
+          "bedroom"
+      ],
+      "dimension": {
+          "length": 2176,
+          "width": 1660,
+          "height": 1159
+      },
+      "stock": 20,
+      "createdAt": "2025-03-01T02:54:42.778092"
+  },
+  {
+      "title": "BED-GIZA",
+      "sub_title": "BDH-372-3-1-20 (Double Bed)",
+      "sku": "991524",
+      "price": 56250,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2023-09/bdh-372view-02gg.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2023-08/bdh-372view-01jpeg.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The BED-GIZA is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "bed-giza",
+          "bed",
+          "classic",
+          "durable",
+          "comfort"
+      ],
+      "dimension": {
+          "length": 2176,
+          "width": 1460,
+          "height": 835
+      },
+      "stock": 23,
+      "createdAt": "2025-03-01T02:54:42.778099"
+  },
+  {
+      "title": "BACHELOR BED- BARBIE",
+      "sub_title": "BDH-369-3-1-20",
+      "sku": "991511",
+      "price": 16900,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2023-08/bdh-369.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2023-08/bdh-369view-01rgb-01.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The BACHELOR BED- BARBIE is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "bachelor",
+          "luxury",
+          "metal",
+          "comfort",
+          "wooden"
+      ],
+      "dimension": {
+          "length": 1953,
+          "width": 1886,
+          "height": 876
+      },
+      "stock": 16,
+      "createdAt": "2025-03-01T02:54:42.778105"
+  },
+  {
+      "title": "BED- SARA",
+      "sub_title": "DOUBLE BED-BDH-243-2-1-99 (WHITE)",
+      "sku": "745301",
+      "price": 16250,
+      "discount": 0,
+      "image": [
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2024-10/bdh-243interior.jpg",
+          "https://admin.regalfurniturebd.com/storage/uploads/fullsize/2023-07/bdh-243view02.jpg"
+      ],
+      "cat": "Bedroom",
+      "sub_cat": "Bed",
+      "desc": "The BED- SARA is designed to bring elegance and comfort to your bedroom. Crafted with high-quality materials, this bed ensures durability and style. The sleek design and sturdy construction provide a perfect blend of aesthetic appeal and practical functionality. Ideal for a restful sleep, this bed adds a touch of luxury to any space.",
+      "tags": [
+          "bed-",
+          "comfort",
+          "durable",
+          "bedroom",
+          "metal"
+      ],
+      "dimension": {
+          "length": 1981,
+          "width": 1995,
+          "height": 1174
+      },
+      "stock": 21,
+      "createdAt": "2025-03-01T02:54:42.778113"
+  }
+]

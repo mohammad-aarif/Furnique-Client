@@ -1,0 +1,31 @@
+.overlay-icon{
+    position: absolute;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-start;
+    text-align: right;
+    top:0;
+    bottom: 0;
+    right: 0;
+    opacity: 0;
+    transition: .2s ease;
+}
+.product-img:hover .overlay-icon{
+    opacity: 1;
+}
+.icon{
+    background: #ffffff70;
+    border-radius: 50%;
+    border: 1px solid #ffd883;
+    backdrop-filter: blur(10px);
+    font-size: medium;
+    font-weight: 300;
+    padding: 8px;
+    color: rgb(44, 44, 44);
+    margin: 5px 0;
+}
+.icon:hover{
+    background: #ffc022;
+}
