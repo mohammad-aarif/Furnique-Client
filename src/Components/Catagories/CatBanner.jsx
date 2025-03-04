@@ -1,4 +1,4 @@
-import ShopNow from '../Buttons/ShopNow/ShopNow';
+import ShopNow from "../Buttons/ShopNow";
 
 const CatBanner = ({className, bg, img, title, desc, link}) => {
     return (

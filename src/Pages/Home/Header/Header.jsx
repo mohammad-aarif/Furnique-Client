@@ -1,4 +1,4 @@
-import ShopNow from '../../../Components/Buttons/ShopNow/ShopNow';
+import ShopNow from '../../../Components/Buttons/ShopNow';
 import './header.css'
 const Header = () => {
     return (

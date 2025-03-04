@@ -1,4 +1,3 @@
-import ShopNow from '../../../Components/Buttons/ShopNow/ShopNow';
 import CatBanner from '../../../Components/Catagories/CatBanner';
 import './hotcategories.css'
 const HotCategories = () => {

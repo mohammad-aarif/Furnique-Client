@@ -6,10 +6,11 @@ import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
 import axios from 'axios';
-import ShopNow from '../../../Components/Buttons/ShopNow/ShopNow';
 import { BsCartPlus } from "react-icons/bs";
 import { CiHeart } from 'react-icons/ci';
 import { IoIosExpand } from 'react-icons/io';
+import BuyNow from '../../../Components/Buttons/BuyNow';
+import BrowseMore from '../../../Components/Buttons/BrowseMore';
 
 const FeaturedProducts = () => {
     const [product, setProduct] = useState([])
@@ -58,14 +59,19 @@ const FeaturedProducts = () => {
                     <div>
                       <h3 className='text-xl'>{data?.price}</h3>
                       <div className="">4.9</div>
-                      <ShopNow link={'/'} />
+                      <BuyNow link={'/'} />
                     </div>
 
                   </div>
                 </div>
               </SwiperSlide>
           )
-        })}        
+        })}
+        <SwiperSlide>
+          <div className="my-6">
+            <BrowseMore link='/products' className={'h-56'}/>
+          </div>
+        </SwiperSlide>     
       </Swiper>
       </div>
       </>
