@@ -11,6 +11,7 @@ import { CiHeart } from 'react-icons/ci';
 import { IoIosExpand } from 'react-icons/io';
 import BuyNow from '../../../Components/Buttons/BuyNow';
 import BrowseMore from '../../../Components/Buttons/BrowseMore';
+import { GiRoundStar } from 'react-icons/gi';
 
 const FeaturedProducts = () => {
     const [product, setProduct] = useState([])
@@ -34,7 +35,7 @@ const FeaturedProducts = () => {
         {product.map(data => {
           const subtitle = (data?.sub_title)?.split(" ").slice(0, 5).join(" ") + " ..."          
           return(
-              <SwiperSlide key={data?.sku}>
+              <SwiperSlide className='pb-8' key={data?.sku}>
                 <div className="flex product-img h-56 bg-gray-100 rounded-2xl my-6">
                   <div className="w-1/2 relative">
                     <div className="overlay-icon">
@@ -57,11 +58,10 @@ const FeaturedProducts = () => {
                       <p className='text-xs'>{subtitle}</p>
                     </div>
                     <div>
-                      <h3 className='text-xl'>{data?.price}</h3>
-                      <div className="">4.9</div>
+                      <h3 className='text-xl font-bold text-green-800'>&#2547; {data?.price}</h3>
+                      <div className=""><GiRoundStar className='text-amber-400 inline'/> ({data?.ratting})</div>
                       <BuyNow link={'/'} />
                     </div>
-
                   </div>
                 </div>
               </SwiperSlide>
