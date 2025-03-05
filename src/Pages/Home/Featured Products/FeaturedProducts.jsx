@@ -4,12 +4,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/pagination';
-import { BsCartPlus } from "react-icons/bs";
-import { CiHeart } from 'react-icons/ci';
-import { IoIosExpand } from 'react-icons/io';
-import BuyNow from '../../../Components/Buttons/BuyNow';
 import BrowseMore from '../../../Components/Buttons/BrowseMore';
-import { GiRoundStar } from 'react-icons/gi';
 import useProducts from '../../../Hooks/Products/useProducts';
 import SlideCard from '../../../Components/Products/SlideCard';
 
@@ -36,11 +31,13 @@ const FeaturedProducts = () => {
               </SwiperSlide>
           )
         })}
+
         <SwiperSlide>
           <div className="my-6">
             <BrowseMore link='/products' className={'h-56'}/>
           </div>
-        </SwiperSlide>     
+        </SwiperSlide>  
+
       </Swiper>
       </div>
       </>

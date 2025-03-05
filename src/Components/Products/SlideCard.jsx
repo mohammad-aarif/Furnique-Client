@@ -25,7 +25,7 @@ const SlideCard = ({data}) => {
         </div>
         <div className="w-1/2 flex flex-col justify-between p-2">
         <div>
-            <span>{data?.cat}</span>
+            <span className='text-gray-600'>{data?.sub_cat}</span>
             <h2 className='text-xl'>{data?.title}</h2>
             <p className='text-xs'>{subtitle}</p>
         </div>
