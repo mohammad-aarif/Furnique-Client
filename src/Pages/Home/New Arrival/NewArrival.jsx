@@ -12,7 +12,7 @@ const NewArrival = () => {
             <SectionTitle title="New Arrival" subtitle="Showcasing Our Latest and Greatest"/>
             <div className="px-16 py-8 product-catalog">
                 {newArrivalData.map(data => <ProductCard data={data}/>)}
-                <BrowseMore className='h-full shadow-sm'/>
+                <BrowseMore className='h-full w-full shadow-sm'/>
             </div>
         </>
     );
