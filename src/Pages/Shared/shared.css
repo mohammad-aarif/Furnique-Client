@@ -36,6 +36,6 @@
 .divider{
     height: 1px;
     width: full;
-    background: rgb(49, 52, 71);
+    background: rgba(128, 128, 128, 0.4);
     margin: 10px auto;
 }
