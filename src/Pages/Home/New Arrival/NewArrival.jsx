@@ -5,14 +5,14 @@ import BrowseMore from "../../../Components/Buttons/BrowseMore"
 import './newArrival.css'
 const NewArrival = () => {
 
-    const {newArrivalData} = useProducts()
+    const {allProduct} = useProducts('true')
     
     return (
         <>
             <SectionTitle title="New Arrival" subtitle="Showcasing Our Latest and Greatest"/>
             <div className="px-16 py-8 product-catalog">
-                {newArrivalData.map(data => <ProductCard data={data}/>)}
-                <BrowseMore className='h-full w-full shadow-sm'/>
+                {allProduct.map(data => <ProductCard data={data}/>)}
+                <BrowseMore link={'/products'} className='h-full w-full shadow-sm'/>
             </div>
         </>
     );

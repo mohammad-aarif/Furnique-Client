@@ -1,25 +1,31 @@
 .filter-container{
-    background-color: rgb(237, 237, 237);
+    background-color: rgb(248, 248, 248);
     margin-right: 10px;
     padding: 20px;
-    box-shadow: 3px 0 5px 0 rgb(213, 213, 213);
+    box-shadow: 3px 0 3px 0 rgb(233, 233, 233);
 }
 .category-item{
     display: flex;
     align-items: center;
     padding: 5px 0;
-    color: #2b2b2b;
+    color: #181818;
 }
 .category-item input{
     display: none;
 }
 .category-item .checkmark{
-    height: 20px;
-    width: 20px;
+    height: 18px;
+    width: 18px;
     border: 1px solid rgb(209, 209, 209);
     border-radius: 5px;
     margin-right: 5px;
 }
 .category-item input:checked + .checkmark{
-    background: #429e01;
+    background: #90dc02;
+}
+.sort select{
+    display: block;
+    border: 1px solid rgb(86, 86, 86);
+    outline: none;
+    padding:5px;
 }
