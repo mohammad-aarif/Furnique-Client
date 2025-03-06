@@ -1,30 +1,26 @@
-import { useState } from 'react';
-
-const SelectCategory = ({item}) => {
-    const [category, setCategory] = useState([])
+const SelectCategory = ({setCategory, item}) => {
 
     const handleCatSelection = c => {
-        setCategory(data => 
-            data.includes(c) 
-            ? data.filter(item => item !== c)
-            : [...data, c]
-        )
+        setCategory((prevData) =>
+            prevData.includes(c)
+                ? prevData.filter((item) => item !== c)
+                : [...prevData, c]
+        );
+        
     }   
-    console.log(category)
     return (
         <div>
             <label className='category-item'>
                 <input
                     type="checkbox" 
-                    name="Living Room" 
-                    onChange={handleCatSelection}
+                    name="Living gello" 
+                    onChange={() => handleCatSelection(item?.category)}
                     />
                 <span className='checkmark'></span>
-                {item?.name}
+                {item?.category}
             </label>
         </div>
     );
 };
 
 export default SelectCategory;
-
