@@ -2,9 +2,10 @@ import useProducts from "../../Hooks/Products/useProducts";
 import FilterOption from "./Filter Options/FilterOption";
 import ProductHeader from "./Product Header/ProductHeader";
 import ProductCard from "../../Components/Products/ProductCard";
+import Pagination  from "../Products/Pagination/Pagination";
 
 const Products = () => {
-    const {allProduct} = useProducts(null)
+    const {allProduct} = useProducts()
     console.log(allProduct);
     
     return (
@@ -18,6 +19,9 @@ const Products = () => {
                     {
                         allProduct.map(product => <ProductCard link={product._key} data={product} key={product._key}/>)
                     }
+                </div>
+                <div className="pagination">
+                   <Pagination /> 
                 </div>
             </div>
         </div>
