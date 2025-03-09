@@ -6,7 +6,6 @@ import Pagination  from "../Products/Pagination/Pagination";
 
 const Products = () => {
     const {allProduct} = useProducts()
-    console.log(allProduct);
     
     return (
         <div className="py-20 flex h-full">
