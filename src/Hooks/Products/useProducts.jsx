@@ -2,18 +2,11 @@ import { useEffect, useState } from "react";
 import useAxiosPublic from "../Axios/useAxiosPublic";
 
 const useProducts = (query) => {
+        
     const [newArrivalData, setNewArrivalData] = useState([])
     const [featuredData, setFeaturedData] = useState([])
-    const [allProduct , setAllProduct] = useState([])
-    const [productCount , setProductCount] = useState([])
-    
-    // Getting All Products 
-    useEffect(
-        () => {
-            useAxiosPublic.get('/products')
-            .then(data => setAllProduct(data.data))
-        }, []
-    )
+    const [productCount , setProductCount] = useState(0)
+
     // Getting Total Number of Products 
     useEffect(
         () => {
@@ -35,10 +28,10 @@ const useProducts = (query) => {
             .then(data => setFeaturedData(data.data))
         }, [query]
     )
+
     return {
         newArrivalData,
         featuredData,
-        allProduct,
         productCount
     }
 };
