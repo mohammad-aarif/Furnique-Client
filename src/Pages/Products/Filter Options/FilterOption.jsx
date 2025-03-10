@@ -4,15 +4,16 @@ import './filterOption.css'
 import useCategories from '../../../Hooks/Category/useCategories';
 
 const FilterOption = () => {
+
     const categories = useCategories()
     const [category, setCategory] = useState(() => {
         const storedData = localStorage.getItem('product_filter')
-        return storedData ? JSON.parse(storedData) : []
+        return storedData ? JSON.parse(storedData) : {sortBy:null, category: []}
     })
     useEffect(() => {
         localStorage.setItem('product_filter', JSON.stringify(category))
     },[category])
-
+    
    
     return (
         <div className='filter-container'>
@@ -23,7 +24,7 @@ const FilterOption = () => {
             <div className="py-4">
                 <h2 className="text-xl font-medium">Category</h2>
                 {
-                    categories.map(data => <SelectCategory category={category} setCategory={setCategory} item={data} key={data._id}/>)
+                    categories.map(data => <SelectCategory category={category.category} setCategory={setCategory} item={data} key={data._id}/>)
                 }
             </div>
         </div>

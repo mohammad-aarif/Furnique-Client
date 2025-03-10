@@ -2,12 +2,13 @@ import FilterOption from "./Filter Options/FilterOption";
 import ProductHeader from "./Product Header/ProductHeader";
 import ProductCard from "../../Components/Products/ProductCard";
 import Pagination  from "../Products/Pagination/Pagination";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import useProductFilter from "../../Hooks/Products/useProductFilter";
 
 const Products = () => {
     const [pageNumber, setPageNumber] = useState(1)
-    const filteredProduct = useProductFilter(pageNumber)    
+    const filteredProduct = useProductFilter(pageNumber)
+    
     return (
         <div className="py-20 flex h-full">
             <div className="w-1/5">

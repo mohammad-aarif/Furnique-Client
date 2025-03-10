@@ -1,13 +1,14 @@
 const SelectCategory = ({category, setCategory, item}) => {
 
     const handleCatSelection = c => {
-        setCategory((prevData) =>
-            prevData.includes(c)
-                ? prevData.filter((item) => item !== c)
-                : [...prevData, c]
-        );        
+        setCategory((prevData) =>({
+            ...prevData,
+            category: prevData.category.includes(c)
+                ? prevData.category.filter(items => items !== c)
+                : [...prevData.category , c]
+        }));        
     }
-
+    
     return (
         <div>
             <label className='category-item'>

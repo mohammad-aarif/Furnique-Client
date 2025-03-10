@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 const ProductHeader = () => {
+    const [sort, setSort] = useState(() =>{
+        const storedData = localStorage.getItem('product_filter')
+        return storedData ? JSON.parse(storedData) : {sortBy: null, category: []}
+    })
     const handleVisibility = (e) => {
-        console.log(e.target.value);        
+        setSort(preData => ({
+            ...preData,
+            sortBy: e.target.value
+        }))
     }
+    useEffect(() => {
+        localStorage.setItem('product_filter', JSON.stringify(sort))
+    },[sort])
+
+   
     return (
         <div className='flex px-8 justify-between'>
             <p>Something text</p>
