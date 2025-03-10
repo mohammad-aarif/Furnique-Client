@@ -2,17 +2,16 @@ import React, { useEffect, useState } from 'react';
 
 const ProductHeader = () => {
     const [sort, setSort] = useState(() =>{
-        const storedData = localStorage.getItem('product_filter')
-        return storedData ? JSON.parse(storedData) : {sortBy: null, category: []}
+        const storedData = localStorage.getItem('sort')
+        return storedData ? JSON.parse(storedData) : {sortBy:'latest'}
     })
     const handleVisibility = (e) => {
-        setSort(preData => ({
-            ...preData,
-            sortBy: e.target.value
-        }))
+
+        setSort({sort: e.target.value})
     }
+    
     useEffect(() => {
-        localStorage.setItem('product_filter', JSON.stringify(sort))
+        localStorage.setItem('sort', JSON.stringify(sort))
     },[sort])
 
    
@@ -21,7 +20,7 @@ const ProductHeader = () => {
             <p>Something text</p>
             <div className='flex items-center sort'>
                 <p>Sort By:</p>
-                <select onChange={handleVisibility} className='rounded-sm mx-5'>
+        <select onChange={handleVisibility} defaultValue={sort.sort} className='rounded-sm mx-5'>
                     <option value="latest">Deafult</option>
                     <option value="h2l">Price (High {'>'} Low)</option>
                     <option value="l2h">Price (Low {'>'} High)</option>

@@ -1,21 +1,16 @@
-const SelectCategory = ({category, setCategory, item}) => {
+import { useDispatch, useSelector } from "react-redux";
+import { addToFilter } from "../../Redux/Reducer/filterSlice";
 
-    const handleCatSelection = c => {
-        setCategory((prevData) =>({
-            ...prevData,
-            category: prevData.category.includes(c)
-                ? prevData.category.filter(items => items !== c)
-                : [...prevData.category , c]
-        }));        
-    }
-    
+const SelectCategory = ({item}) => {
+    const dispatch = useDispatch()
+    const categories = useSelector(state => state.filter.categories)
     return (
         <div>
             <label className='category-item'>
                 <input
                     type="checkbox"
-                    checked={category.includes(item?.category)}
-                    onChange={() => handleCatSelection(item?.category)}
+                    checked={categories.includes(item?.category)}
+                    onChange={() => dispatch(addToFilter(item?.category))}
                     />
                 <span className='checkmark'></span>
                 {item?.category}
