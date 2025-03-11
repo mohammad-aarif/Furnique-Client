@@ -1,10 +1,7 @@
-import useProducts from "../../../Hooks/Products/useProducts";
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from "react-icons/md";
 
-const Pagination = ({pageNumber, setPageNumber}) => {
-    const  {productCount} = useProducts()
-
-    const pageCount = Math.ceil(productCount / 12)
+const Pagination = ({pageNumber, setPageNumber, count}) => {
+    const pageCount = Math.ceil(count / 12)
     
     const getPages = () => {
 
@@ -42,7 +39,7 @@ const Pagination = ({pageNumber, setPageNumber}) => {
         }
     }    
     return (
-        <div className="flex py-5 items-center justify-center">
+        <div className={`flex py-5 items-center justify-center ${count < 12? 'hidden': ''}`}>
             <button onClick={() => handlePrevBtn(pageNumber-1)} className= {`px-3 h-8 text-lg rounded-sm mr-2 bg-gray-300 hover:bg-amber-400`} ><MdKeyboardDoubleArrowLeft /></button>
             {
                 getPages().map((data, idx) =>

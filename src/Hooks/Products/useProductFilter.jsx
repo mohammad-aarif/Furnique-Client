@@ -24,7 +24,7 @@ const useProductFilter = (pageNumber) => {
         () => {
             useAxiosPublic.get(`/products?${query}`)
             .then(data => setFilteredProduct(data.data))
-        }, [query]
+        }, [query, pageNumber]
     )
 
     return filteredProduct

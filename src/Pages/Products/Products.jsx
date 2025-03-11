@@ -2,13 +2,14 @@ import FilterOption from "./Filter Options/FilterOption";
 import ProductHeader from "./Product Header/ProductHeader";
 import ProductCard from "../../Components/Products/ProductCard";
 import Pagination  from "../Products/Pagination/Pagination";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import useProductFilter from "../../Hooks/Products/useProductFilter";
 
 const Products = () => {
     const [pageNumber, setPageNumber] = useState(1)
     const [loading, setLoading] = useState(true)
-    const filteredProduct = useProductFilter(pageNumber)
+    const {products, count} = useProductFilter(pageNumber)
+
 
     return (
         <div className="py-20 flex h-full">
@@ -19,11 +20,11 @@ const Products = () => {
                 <ProductHeader setLoading={setLoading} />
                 <div className="grid grid-cols-4 gap-2 py-2">
                     {
-                        filteredProduct.map(product => <ProductCard link={product._id} data={product} key={product._id}/>)
+                        products?.map(product => <ProductCard link={product._id} data={product} key={product._id}/>)
                     }
                 </div>
                 <div className="pagination">
-                   <Pagination pageNumber={pageNumber} setPageNumber ={setPageNumber}/> 
+                   <Pagination pageNumber={pageNumber} count={count} setPageNumber ={setPageNumber}/> 
                 </div>
             </div>
         </div>
