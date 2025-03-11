@@ -1,26 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { addSort } from '../../../Redux/Reducer/filterSlice';
 
 const ProductHeader = () => {
-    const [sort, setSort] = useState(() =>{
-        const storedData = localStorage.getItem('sort')
-        return storedData ? JSON.parse(storedData) : {sortBy:'latest'}
-    })
-    const handleVisibility = (e) => {
-
-        setSort({sort: e.target.value})
-    }
-    
-    useEffect(() => {
-        localStorage.setItem('sort', JSON.stringify(sort))
-    },[sort])
-
+    const sort = useSelector(state => state.filter.sortBy)
+    const dispatch = useDispatch()
    
     return (
         <div className='flex px-8 justify-between'>
             <p>Something text</p>
             <div className='flex items-center sort'>
                 <p>Sort By:</p>
-        <select onChange={handleVisibility} defaultValue={sort.sort} className='rounded-sm mx-5'>
+        <select onChange={(e) => dispatch(addSort(e.target.value))} defaultValue={sort.sort} className='rounded-sm mx-5'>
                     <option value="latest">Deafult</option>
                     <option value="h2l">Price (High {'>'} Low)</option>
                     <option value="l2h">Price (Low {'>'} High)</option>

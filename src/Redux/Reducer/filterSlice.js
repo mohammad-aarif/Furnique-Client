@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
     categories: [],
+    sortBy : 'latest',
 }
 const filterSlice = createSlice({
     name: 'filter',
@@ -13,8 +14,11 @@ const filterSlice = createSlice({
             }else{
                 state.categories.push(action.payload)
             }
+        },
+        addSort: (state, action) =>{
+            state.sortBy = action.payload
         }
     }
 }); 
-export const {addToFilter} = filterSlice.actions;
+export const {addToFilter, addSort} = filterSlice.actions;
 export default filterSlice.reducer;
