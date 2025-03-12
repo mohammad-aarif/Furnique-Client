@@ -1,0 +1,60 @@
+.auth-container{
+    background-image: url('/src/assets/sofa.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 600px;
+    width: 80vw;
+    border-radius: 20px;
+    overflow: hidden;
+}
+.auth{
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    height: 100%;
+    background: #03500fd4;
+    width: 45%;
+    float: right;
+    backdrop-filter: blur(8px);
+    padding: 20px;
+}
+.form-group input{
+    border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+    width: 80%;
+    padding: 5px;
+    display: block;
+    border-radius: 5px;
+    color: rgba(255, 255, 255, 0.8);
+    background: #ffffff05;
+}
+.form-group label{
+    display: block;
+    font-size: smaller;
+    margin: 15px 0 5px 0;
+    color: #ffffffc1;
+}
+.auth input[type=submit]{
+    display: block;
+    width: 80%;
+    background:#ffc022;
+    border-radius: 5px;
+    padding: 5px 25px;
+    margin: 10px 0px;
+}
+.auth input[type=submit]:hover{
+    background:#ffaa00;
+
+}
+.googleBtn{
+    width: 80%;
+    color: rgba(255, 255, 255, 0.8);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+    padding: 5px 25px;
+}
+.googleBtn:hover{
+    background:rgba(255, 255, 255, 0.5);
+    color: #000000;
+    backdrop-filter: blur(5px);
+}
