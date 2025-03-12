@@ -46,15 +46,3 @@
     background:#ffaa00;
 
 }
-.googleBtn{
-    width: 80%;
-    color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(255, 255, 255, 0.3);
-    border-radius: 5px;
-    padding: 5px 25px;
-}
-.googleBtn:hover{
-    background:rgba(255, 255, 255, 0.5);
-    color: #000000;
-    backdrop-filter: blur(5px);
-}
