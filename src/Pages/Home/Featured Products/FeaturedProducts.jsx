@@ -9,7 +9,6 @@ import useProducts from '../../../Hooks/Products/useProducts';
 import SlideCard from '../../../Components/Products/SlideCard';
 
 const FeaturedProducts = () => {
-
   const {featuredData} = useProducts('true')
 
     return (
