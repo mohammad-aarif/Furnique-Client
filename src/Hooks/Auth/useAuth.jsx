@@ -21,14 +21,14 @@ const useAuth = () => {
             .then(user => {
                 // User Data send to database 
                 const newUser = {
-                    fullName,
+                    displayName: fullName,
                     email,
                     role : 'user'
                 }
                 useAxiosPublic.post('/users', newUser)
                 .then(res => {
                     // Confirmation and redirect to login page 
-                    if(res.status === 200){
+                    if(res.status === 201){
                         Swal.fire({
                             title: "Hurrah!",
                             text: "Your Account Register Successfully",
@@ -65,12 +65,24 @@ const useAuth = () => {
     const googleSignIn = () =>{
         signInWithPopup(auth, googleProvider)
             .then(user => {
+                // Data sent to Database 
+                const newUser ={
+                    displayName: user?.user?.displayName,
+                    email: user?.user?.email,
+                    role: 'user'
+                }
+                useAxiosPublic.post('/users', newUser)
+                .then(res => {
+                    if(res.status === 200){
+                       console.log(res) 
+                    }
+                })
+                .catch(err => setError(err))
                 setUser(user)
                 setLoading(false)
             })
             .catch(err => setError(err.message))
     }
-    console.log(loading);
     
     return {
         createUser,
