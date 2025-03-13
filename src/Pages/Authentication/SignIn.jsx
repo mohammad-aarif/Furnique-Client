@@ -1,11 +1,13 @@
 import { Link } from 'react-router-dom';
 import GoogleSingInBtn from '../../Components/Buttons/GoogleSingInBtn';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../Hooks/Auth/useAuth';
 
 const SignIn = () => {
     const {register, handleSubmit, reset, formState: { errors }} = useForm()
+    const {signInUser} = useAuth()
     const handleSignInData = (data) => {
-        console.log(data)
+        signInUser(data.email, data.password)
 
         reset()
     }
@@ -31,7 +33,7 @@ const SignIn = () => {
                 </div>
 
                 <div className="form-group">
-                    <label>Email:</label>
+                    <label>Password:</label>
                     <input
                         {...register('password',
                             {  
@@ -40,6 +42,7 @@ const SignIn = () => {
                                     value: /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d@$!%*?&]{8,}$/,
                                   }
                             })}
+                        type='password'
                         autoComplete="current-password"
                         placeholder="Enter Your Email" />
                     {errors.password && <p className="bg-red-100 p-2 w-4/5 text-sm text-red-500">{errors.password.message}</p>}

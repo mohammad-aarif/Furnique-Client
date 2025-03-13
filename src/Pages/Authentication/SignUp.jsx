@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
 import GoogleSingInBtn from '../../Components/Buttons/GoogleSingInBtn';
 import { useForm } from 'react-hook-form';
+import useAuth from '../../Hooks/Auth/useAuth';
 
 const SignUp = () => {
     const {handleSubmit, register, reset, formState: { errors }} = useForm()
+    const {createUser} = useAuth()
+    
     const handleSignUpData = (data) => {
-        console.log(data)
+        createUser(data.email, data.password)
         reset()
     }   
     return (
