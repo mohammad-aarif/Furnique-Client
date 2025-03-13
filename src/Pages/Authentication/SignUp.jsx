@@ -4,12 +4,12 @@ import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/Auth/useAuth';
 
 const SignUp = () => {
-    const {handleSubmit, register, reset, formState: { errors }} = useForm()
-    const {createUser} = useAuth()
-    
+    const {handleSubmit, register, formState: { errors }} = useForm()
+    const {createUser, setLoading, error} = useAuth()
+
     const handleSignUpData = (data) => {
-        createUser(data.email, data.password)
-        reset()
+        createUser(data.name, data.email, data.password)
+        setLoading(true)
     }   
     return (
         <div>
@@ -50,10 +50,11 @@ const SignUp = () => {
                         type="password"
                         autoComplete="new-password"
                         placeholder="Enter Your Password" />
+                        
                         {errors.password && <p className="bg-red-100 w-4/5 p-2 text-sm text-red-500">{errors.password.message}</p>}
+                        {error && <p className="bg-red-100 p-2 w-4/5 text-sm text-red-500">{error}</p>}
+
                 </div>
-
-
                 <input type="submit" name="password" value='Sign Up' />
             </form>
             <GoogleSingInBtn />

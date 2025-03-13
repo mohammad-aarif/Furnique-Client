@@ -5,7 +5,7 @@ import useAuth from '../../Hooks/Auth/useAuth';
 
 const SignIn = () => {
     const {register, handleSubmit, reset, formState: { errors }} = useForm()
-    const {signInUser} = useAuth()
+    const {signInUser, error} = useAuth()
     const handleSignInData = (data) => {
         signInUser(data.email, data.password)
 
@@ -45,6 +45,7 @@ const SignIn = () => {
                         type='password'
                         autoComplete="current-password"
                         placeholder="Enter Your Email" />
+                    {error && <p className="bg-red-100 p-2 w-4/5 text-sm text-red-500">{error}</p>}
                     {errors.password && <p className="bg-red-100 p-2 w-4/5 text-sm text-red-500">{errors.password.message}</p>}
                 </div>
                 <input type="submit" value='Sign In' />

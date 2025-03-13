@@ -46,3 +46,17 @@
     background:#ffaa00;
 
 }
+.popUp{
+    background: #03500f8a;
+    border-radius: 10px;
+    border: 1px solid #03500fd4;
+    backdrop-filter: blur(10px);
+}
+.popUp-btn{
+    background: #ffc022;
+    color: #000;
+    padding: 10px 40px;
+}
+.swal2-icon{
+    border: none;
+}
