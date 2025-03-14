@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { firebaseApp } from "../../Firebase/firebase.config";
 import useAxiosPublic from "../Axios/useAxiosPublic";
 import { firebaseErrorMessage } from "../../Firebase/firebase.error";
@@ -21,7 +21,7 @@ const useAuth = () => {
     // Create User by email and Password 
     const createUser = (fullName, email, password) => {
         createUserWithEmailAndPassword(auth, email, password)
-            .then(user => {
+            .then(() => {
                 // User Data send to database 
                 const newUser = {
                     displayName: fullName,
@@ -57,10 +57,15 @@ const useAuth = () => {
     const signInUser = (email, password) =>{
         signInWithEmailAndPassword(auth, email, password)
         .then(user => {
-            // dispatch(setUser(...user))
+            useAxiosPublic.get(`/users/user/${user?.user?.email}`)
+                .then(data => setUserData({
+                    ...data.data,
+                    photoURL: user?.user?.photoURL
+                }))
+                .catch(err => setError(err))
             setLoading(false)
         })
-        .catch(err => setError(err.message))
+        .catch(err => setError(firebaseErrorMessage(err.code)))
     }
 
     // Sign in With Google
@@ -94,31 +99,30 @@ const useAuth = () => {
                         .catch(err => setError(err))
                     }
                 })
-                .catch(err => setError(err))
+                .catch(err => setError(firebaseErrorMessage(err.code)))
                 // dispatch(setUser(...user))
                 setLoading(false)
             })
             .catch(err => setError(err.message))
     }
+
     // Sing Out User 
     const logOut = () => {
         signOut(auth)
-            .then(() =>{
-                console.log('logout');
-            })
+            .then(() =>{})
     }
-
-    console.log(userData);
     
     // Manage User Current State 
-    onAuthStateChanged(auth, user =>{
-        if(user){
-            dispatch(setUser(userData))
-        }
-        else{
-            dispatch(removeUser())
-        }
-    })
+    useEffect(() => {
+        onAuthStateChanged(auth, user =>{
+            if(user){
+                dispatch(setUser(userData))
+            }
+            else{
+                dispatch(removeUser())
+            }
+        })
+    },[userData, auth, dispatch])
     
     return {
         createUser,
@@ -126,7 +130,8 @@ const useAuth = () => {
         googleSignIn,
         setLoading,
         error,
-        logOut
+        logOut,
+        loading
     }
 };
 
