@@ -4,11 +4,14 @@ import useAxiosPublic from "../Axios/useAxiosPublic";
 import { firebaseErrorMessage } from "../../Firebase/firebase.error";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
-import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, signInWithEmailAndPassword, signInWithPopup } from "firebase/auth";
+import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
+import { useDispatch } from "react-redux";
+import { setUser, removeUser } from "../../Redux/Reducer/userSlice";
 
 
 const useAuth = () => {
-    const [user, setUser] = useState(null);
+    const dispatch = useDispatch()
+    const [userData, setUserData] = useState(null)
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
 
@@ -54,7 +57,7 @@ const useAuth = () => {
     const signInUser = (email, password) =>{
         signInWithEmailAndPassword(auth, email, password)
         .then(user => {
-            setUser(user)
+            // dispatch(setUser(...user))
             setLoading(false)
         })
         .catch(err => setError(err.message))
@@ -73,23 +76,57 @@ const useAuth = () => {
                 }
                 useAxiosPublic.post('/users', newUser)
                 .then(res => {
-                    if(res.status === 200){
-                       console.log(res) 
+                    // Data save to database if user not exist 
+                    if(res.status === 201){
+                       setUserData({
+                        ...res.data,
+                        photoURL: user?.user?.photoURL
+                       }) 
+                    }
+                    // Data Retrive from database if user exist 
+                    else if(res.status === 200){
+                        console.log(user);                        
+                        useAxiosPublic.get(`/users/user/${user?.user?.email}`)
+                        .then(data => setUserData({
+                            ...data.data,
+                            photoURL: user?.user?.photoURL
+                        }))
+                        .catch(err => setError(err))
                     }
                 })
                 .catch(err => setError(err))
-                setUser(user)
+                // dispatch(setUser(...user))
                 setLoading(false)
             })
             .catch(err => setError(err.message))
     }
+    // Sing Out User 
+    const logOut = () => {
+        signOut(auth)
+            .then(() =>{
+                console.log('logout');
+            })
+    }
+
+    console.log(userData);
+    
+    // Manage User Current State 
+    onAuthStateChanged(auth, user =>{
+        if(user){
+            dispatch(setUser(userData))
+        }
+        else{
+            dispatch(removeUser())
+        }
+    })
     
     return {
         createUser,
         signInUser,
         googleSignIn,
         setLoading,
-        error
+        error,
+        logOut
     }
 };
 
