@@ -4,15 +4,29 @@ import { GiRoundStar } from 'react-icons/gi';
 import { CiHeart } from 'react-icons/ci';
 import { IoIosExpand } from 'react-icons/io';
 import { BsCartPlus } from 'react-icons/bs';
+import { useDispatch } from 'react-redux';
+import { addToCart } from '../../Redux/Reducer/cartSlice';
 
 const SlideCard = ({data}) => {
+    const dispatch = useDispatch()
+    const handleAddToCart = () => {
+        console.log("ha ha atai bastob",data._id);
+        const newProductData = {
+            _id: data._id,
+            price: data.price,
+            name: data.title,
+            image: data.image
+        }
+        dispatch(addToCart(newProductData))    
+    }
+
     const subtitle = (data?.sub_title)?.split(" ").slice(0, 5).join(" ") + " ..."          
     return (
     <div className="flex product-img h-56 bg-gray-100 rounded-2xl my-6">
         <div className="w-1/2 relative">
         <div className="overlay-icon">
             <div className='icon'>
-            <BsCartPlus />
+            <BsCartPlus onClick={handleAddToCart}/>
             </div>
             <div className='icon'>
             <IoIosExpand />

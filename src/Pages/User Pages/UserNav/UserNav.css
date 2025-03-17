@@ -1,0 +1,10 @@
+.user-nav a{
+    display:block;
+    border-bottom: 3px solid #d1d5dc;
+    padding: 10px 30px;
+    transition: .3s;
+}
+.user-nav .active{
+    background: #d1d5dc;
+    border-radius: 5px 5px 0 0;
+}

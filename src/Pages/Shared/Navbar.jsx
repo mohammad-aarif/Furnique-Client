@@ -22,7 +22,12 @@ const Navbar = () => {
                     <input type="text" placeholder='Search Products' name="query" />
                     <CiSearch  />
                 </form>
-                <CiShoppingCart className='mx-5'/>
+                <div className="cart-icon">
+                    <NavLink to={'/user/cart'} >
+                        <CiShoppingCart className='mx-5'/>
+                        <span className='absolute'>12</span>
+                    </NavLink>
+                </div>
                 <CiUser />
             </div>
         </div>

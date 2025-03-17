@@ -8,6 +8,11 @@ import Error from "../Pages/Error/Error";
 import Authentication from "../Pages/Authentication/Authentication";
 import SignIn from "../Pages/Authentication/SignIn";
 import SignUp from "../Pages/Authentication/SignUp";
+import UserDashBoard from "../Layout/UserDashBoard";
+import Cart from "../Pages/User Pages/Cart/Cart";
+import Orders from "../Pages/User Pages/Orders/Orders";
+import Liked from "../Pages/User Pages/Liked/Liked";
+import Profile from "../Pages/User Pages/Profile/Profile";
 
 export const router = createBrowserRouter([
     {
@@ -30,6 +35,32 @@ export const router = createBrowserRouter([
             {
                 path: '/contact-us',
                 element: <ContactUs />
+            },
+            {
+                path: '/user',
+                element: <UserDashBoard />,
+                children: [
+                    {
+                        path: '/user/',
+                        element: <Cart />
+                    },
+                    {
+                        path: '/user/cart',
+                        element: <Cart />
+                    },
+                    {
+                        path: '/user/orders',
+                        element: <Orders />
+                    },
+                    {
+                        path: '/user/liked',
+                        element: <Liked />
+                    },
+                    {
+                        path: '/user/profile',
+                        element: <Profile />
+                    },
+                ]
             },
         ]
     },
