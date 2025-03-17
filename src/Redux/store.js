@@ -8,7 +8,7 @@ import cartReducer from './Reducer/cartSlice';
 const persistConfig = { 
     key: 'root',
     storage,
-    whitelist: ['auth']
+    whitelist: ['auth', 'cart']
     };
 
 const rootReducer = combineReducers({
