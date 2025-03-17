@@ -14,7 +14,7 @@ const SlideCard = ({data}) => {
         const newProductData = {
             _id: data._id,
             price: data.price,
-            name: data.title,
+            title: data.title,
             image: data.image
         }
         dispatch(addToCart(newProductData))    

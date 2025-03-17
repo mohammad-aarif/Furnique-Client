@@ -1,0 +1,4 @@
+.cart-items td, th {
+    text-align: left;
+    padding:10px 20px ;
+  }
