@@ -29,18 +29,7 @@ const cartSlice = createSlice({
             }else{
                 state.cartItems = state.cartItems.filter(data => data._id !== productId)
             }
-        },
-        increaseCartProduct: (state, action) => {
-            const productId = action.payload
-            const existingProduct = state.cartItems.findIndex(data => data._id === productId)
-            state.cartItems[existingProduct].count += 1
-        },
-        decreaseCartProduct: (state, action) => {
-            const productId = action.payload
-            const existingProduct = state.cartItems.findIndex(data => data._id === productId)
-            state.cartItems[existingProduct].count -= 1
-        },
-        
+        },      
     }
 })
 

@@ -22,13 +22,13 @@ const ProductCard = ({link, className, data}) => {
             <div className="rounded-lg product-img relative">
                 <div className="overlay-icon">
                             <button onClick={handleAddToCart} className='icon'>
-                            <BsCartPlus />
+                                <BsCartPlus />
                             </button>
                             <button className='icon'>
-                            <IoIosExpand />
+                                <IoIosExpand />
                             </button>
                             <button className='icon'>
-                            <CiHeart />
+                                <CiHeart />
                             </button>
                         </div>
                 <img src={data?.image?.[0]} alt={data?.title} />

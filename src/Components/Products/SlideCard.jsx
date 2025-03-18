@@ -25,13 +25,13 @@ const SlideCard = ({data}) => {
         <div className="w-1/2 relative">
         <div className="overlay-icon">
             <button onClick={handleAddToCart} className='icon'>
-            <BsCartPlus />
+                <BsCartPlus />
             </button>
             <button className='icon'>
-            <IoIosExpand />
+                <IoIosExpand />
             </button>
             <button className='icon'>
-            <CiHeart />
+                <CiHeart />
             </button>
         </div>
         <img src={data?.image?.[0]} alt={data.title} />
