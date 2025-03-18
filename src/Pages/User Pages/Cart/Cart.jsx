@@ -8,26 +8,25 @@ const Cart = () => {
     return (
         <div>
             <SectionTitle title={'Your Cart'} subtitle={`You've added ${cartItems.length} item's `} />
-            <div className="flex w-4/5">
-                <div className="w-3/4">
-                    <table className='cart-items table-auto w-full m-10'>
-                        <tr className='bg-gray-200'>
-                            <th>Items</th>
-                            <th>Price</th>
-                            <th>Quantity</th>
-                            <th>Total</th>
-                            <th>View</th>
-                        </tr>
-                        {
-                            cartItems.map(cart => <CartItem key={cart._id} data={cart}/>)
-                        }
-
+                <div className="w-3/4 mx-auto">
+                    <table className='cart-items w-full m-10'>
+                        <thead>
+                            <tr className='bg-gray-200'>
+                                <th>Items</th>
+                                <th>Price</th>
+                                <th>Quantity</th>
+                                <th>Total</th>
+                                <th>View</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {
+                                cartItems.map(cart => <CartItem key={cart._id} data={cart}/>)
+                            }
+                        </tbody>
                     </table>
                 </div>
-                <div className="w-1/4">
-                </div>
             </div>
-        </div>
     );
 };
 

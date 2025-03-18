@@ -10,7 +10,6 @@ import { addToCart } from '../../Redux/Reducer/cartSlice';
 const SlideCard = ({data}) => {
     const dispatch = useDispatch()
     const handleAddToCart = () => {
-        console.log("ha ha atai bastob",data._id);
         const newProductData = {
             _id: data._id,
             price: data.price,

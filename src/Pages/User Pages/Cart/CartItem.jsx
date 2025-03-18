@@ -1,22 +1,35 @@
 import { HiMinusSm } from 'react-icons/hi';
 import ShopNow from '../../../Components/Buttons/ShopNow'
 import { Link } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import { addToCart, removeFromCart } from '../../../Redux/Reducer/cartSlice';
 
 const CartItem = ({data}) => {
+    const dispatch = useDispatch();
+    const handleRemoveCart = id => {
+        dispatch(removeFromCart(id))
+    }
+    const handleAddCart = data => {
+        dispatch(addToCart(data))
+    }
     return (
         <tr>
             <td>
-                <div className="flex justify-between items-center">
-                    <img className='w-2/5 max-h-32' src={data?.image?.[0]} alt="" />
-                    <p className='font-semibold text-md'>{data?.title}</p>
+                <div className="flex justify-around items-center">
+                    <div className="w-1/5">
+                        <img className='w-full' src={data?.image?.[0]} alt="" />
+                    </div>
+                    <div className="w-4/5 px-3">
+                        <p className='font-semibold text-md'>{data?.title}</p>
+                    </div>
                 </div>
             </td>
             <td>${data?.price}</td>
             <td>
                 <div className="flex">
-                    <button className='px-3 py-1 bg-gray-400 rounded-l-md'>+</button>
-                    <span className='px-3 py-1 border-2 border-gray-400 '>{data?.count}</span>
-                    <button className='px-3 py-1 bg-gray-400 rounded-r-md'> <HiMinusSm /></button>
+                    <button onClick={() => handleAddCart(data)} className='px-3 py-1 bg-gray-300 rounded-l-md'>+</button>
+                    <span className='px-3 py-1 border-2 border-gray-300 '>{data?.count}</span>
+                    <button onClick={() => handleRemoveCart(data?._id)} className='px-3 py-1 bg-gray-300 rounded-r-md'> <HiMinusSm /></button>
                 </div>
             </td>
             <td>{data?.price * data?.count}</td>
