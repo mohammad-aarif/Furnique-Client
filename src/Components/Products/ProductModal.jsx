@@ -5,9 +5,13 @@ import { RxCross2 } from "react-icons/rx";
 import { BsCartXFill, BsFillCartCheckFill } from "react-icons/bs";
 import { LuCalendarClock } from "react-icons/lu";
 import { HiOutlineBanknotes } from "react-icons/hi2";
+import { useDispatch } from "react-redux";
+import {addToCart} from '../../Redux/Reducer/cartSlice'
+import { Link } from "react-router-dom";
 
 const ProductModal = ({ ModalOpen, ModalClose, product }) => {
   const [bigImage, setBigImage] = useState(product?.image[0]);
+  const dispatch = useDispatch()
   return (
     <Modal
         isOpen={ModalOpen}
@@ -38,8 +42,8 @@ const ProductModal = ({ ModalOpen, ModalClose, product }) => {
               <h2 className="text-xl font-bold">৳ {product?.price}</h2>
             </div>
             <div className="py-16">
-              <button className="bg-green-800 text-white w-4/5 my-1 py-3">Add to Cart</button>
-              <button className="bg-amber-400 w-4/5 my-1 py-3">More Details</button>
+              <button onClick={() => dispatch(addToCart(product))} className="bg-green-800 text-white w-4/5 my-1 py-3">Add to Cart</button>
+              <Link to={`/products/${product?._id}`} className="bg-amber-400 inline-block text-center w-4/5 my-1 py-3">More Details</Link>
             </div>
           </div>
           <div className="w-1/3 py-5">

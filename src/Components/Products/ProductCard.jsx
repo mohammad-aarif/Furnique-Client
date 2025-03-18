@@ -5,9 +5,12 @@ import { IoIosExpand } from "react-icons/io";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import { addToCart } from "../../Redux/Reducer/cartSlice";
+import ProductModal from "./ProductModal";
+import { useState } from "react";
 
 const ProductCard = ({link, className, data}) => {
-    const dispatch = useDispatch()
+    const [modalOpen, setModalOpen] = useState(false)
+    const dispatch = useDispatch()    
     const handleAddToCart = () => {
         const newProductData = {
             _id: data._id,
@@ -18,13 +21,13 @@ const ProductCard = ({link, className, data}) => {
         dispatch(addToCart(newProductData))    
     }
     return (
-        <Link to={link} className={`p-2 mx-1 bg-gray-100 shadow-sm rounded-lg inline-block ${className}`}>
+        <div className={`p-2 mx-1 bg-gray-100 shadow-sm rounded-lg inline-block ${className}`}>
             <div className="rounded-lg product-img relative">
                 <div className="overlay-icon">
                             <button onClick={handleAddToCart} className='icon'>
                                 <BsCartPlus />
                             </button>
-                            <button className='icon'>
+                            <button onClick={() => setModalOpen(true)} className='icon'>
                                 <IoIosExpand />
                             </button>
                             <button className='icon'>
@@ -33,7 +36,7 @@ const ProductCard = ({link, className, data}) => {
                         </div>
                 <img src={data?.image?.[0]} alt={data?.title} />
             </div>
-            <div className="pt-1 flex flex-col h-24 justify-between">
+            <Link to={link} className="pt-1 flex flex-col h-24 justify-between">
                 <div className="flex justify-between">
                     <p className="text-sm text-gray-600">{data?.sub_cat}</p>
                     <span><GiRoundStar className="text-amber-400 inline"/> ({data?.ratting})</span>
@@ -42,8 +45,9 @@ const ProductCard = ({link, className, data}) => {
                     <h2 className="text-lg font-medium">{(data?.title)?.split(" ").slice(0, 3).join(" ")}</h2>
                     <h2 className="text-md font-bold text-green-800"> &#2547; {data?.price}</h2>
                 </div>
-            </div>
-        </Link>
+            </Link >
+            <ProductModal product={data} ModalOpen={modalOpen} ModalClose={() => setModalOpen(false)}/>
+        </div>
     );
 };
 

@@ -31,16 +31,16 @@ const Cart = () => {
                     <div className='w-2/5 float-end py-5'>
                         <div className="flex justify-between items-center">
                             <h2 className="font-medium">Subtotal:</h2>
-                            <span className='font-bold'>{totalPrice}</span>
+                            <span className='font-bold'>৳ {totalPrice}</span>
                         </div>
                         <div className="flex justify-between items-center">
                             <h2 className="font-medium">Discount:</h2>
-                            <span className='font-bold'>{discount}</span>
+                            <span className='font-bold'>৳ {discount}</span>
                         </div>
                         <div className="divider"></div>
                         <div className="flex text-2xl font-bold justify-between items-center">
                             <h2>Grand Total:</h2>
-                            <span >{totalPrice - discount}</span>
+                            <span >৳{totalPrice - discount}</span>
                         </div>
                         <Link className='w-full bg-[#03500f] text-white inline-block p-2 text-center' to={'/checkout'}>Check Out</Link>
                     </div>

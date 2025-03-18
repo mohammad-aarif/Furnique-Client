@@ -24,7 +24,7 @@ const CartItem = ({data}) => {
                     </div>
                 </div>
             </td>
-            <td>${data?.price}</td>
+            <td>৳ {data?.price}</td>
             <td>
                 <div className="flex">
                     <button onClick={() => handleRemoveCart(data?._id)} className='px-3 py-1 bg-gray-300 rounded-l-md'> <HiMinusSm /></button>
@@ -32,7 +32,7 @@ const CartItem = ({data}) => {
                     <button onClick={() => handleAddCart(data)} className='px-3 py-1 bg-gray-300 rounded-r-md'>+</button>
                 </div>
             </td>
-            <td>{data?.price * data?.count}</td>
+            <td className='font-semibold'>৳ {data?.price * data?.count}</td>
             <td><Link to={`/products/${data?._id}`} className='px-6 py-2 bg-amber-400'>See Details</Link></td>
     </tr>
     );
