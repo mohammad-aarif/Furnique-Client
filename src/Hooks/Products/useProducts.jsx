@@ -28,11 +28,23 @@ const useProducts = (query) => {
             .then(data => setFeaturedData(data.data))
         }, [query]
     )
+    // Single Product 
+    // useEffect(
+    //     (id) => {
+    //         useAxiosPublic.get(`/products/item/`)
+    //         .then(data => setFeaturedData(data.data))
+    //     }, [query]
+    // )
+    const product = id => {
+        console.log(id);
+        
+    }
 
     return {
         newArrivalData,
         featuredData,
-        productCount
+        productCount,
+        product
     }
 };
 

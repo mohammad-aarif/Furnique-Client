@@ -42,7 +42,7 @@ const Cart = () => {
                             <h2>Grand Total:</h2>
                             <span >{totalPrice - discount}</span>
                         </div>
-                        <Link className='w-full bg-[#03500f] text-white inline-block p-2 text-center' to={''}>Check Out</Link>
+                        <Link className='w-full bg-[#03500f] text-white inline-block p-2 text-center' to={'/checkout'}>Check Out</Link>
                     </div>
                 </div>
             </div>

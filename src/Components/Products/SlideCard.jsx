@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import BuyNow from '../Buttons/BuyNow';
 import { GiRoundStar } from 'react-icons/gi';
 import { CiHeart } from 'react-icons/ci';
@@ -6,9 +6,11 @@ import { IoIosExpand } from 'react-icons/io';
 import { BsCartPlus } from 'react-icons/bs';
 import { useDispatch } from 'react-redux';
 import { addToCart } from '../../Redux/Reducer/cartSlice';
+import ProductModal from './ProductModal';
 
 const SlideCard = ({data}) => {
     const dispatch = useDispatch()
+    const [modalOpen, setModalOpen] = useState(false)
     const handleAddToCart = () => {
         const newProductData = {
             _id: data._id,
@@ -17,8 +19,7 @@ const SlideCard = ({data}) => {
             image: data.image
         }
         dispatch(addToCart(newProductData))    
-    }
-
+    }    
     const subtitle = (data?.sub_title)?.split(" ").slice(0, 5).join(" ") + " ..."          
     return (
     <div className="flex product-img h-56 bg-gray-100 rounded-2xl my-6">
@@ -27,7 +28,7 @@ const SlideCard = ({data}) => {
             <button onClick={handleAddToCart} className='icon'>
                 <BsCartPlus />
             </button>
-            <button className='icon'>
+            <button onClick={() => setModalOpen(true)} className='icon'>
                 <IoIosExpand />
             </button>
             <button className='icon'>
@@ -48,6 +49,7 @@ const SlideCard = ({data}) => {
             <BuyNow link={'/'} />
         </div>
         </div>
+        <ProductModal product={data} ModalOpen={modalOpen} ModalClose={() => setModalOpen(false)}/>
     </div>
     );
 };

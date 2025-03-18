@@ -1,11 +1,11 @@
 import React from 'react';
 
 const Orders = () => {
-    return (
-        <div>
-            orders
-        </div>
-    );
+  return (
+    <div>
+      order
+    </div>
+  );
 };
 
 export default Orders;

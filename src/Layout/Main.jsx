@@ -6,7 +6,7 @@ const Main = () => {
     return (
         <div className="min-h-screen flex flex-col">
             <Navbar />
-            <div className="flex-grow p-6">
+            <div className="flex-grow py-6">
                 <Outlet />
             </div>
             <Footer />

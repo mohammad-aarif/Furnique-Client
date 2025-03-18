@@ -1,0 +1,15 @@
+.product-modal{
+    position: absolute;
+    width: 80vw;
+    background-color: #ffffffd2;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+}
+.product-modal-overlay{
+    position: fixed;
+    inset: 0;
+    z-index: 101;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
