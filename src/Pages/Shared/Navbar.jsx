@@ -3,7 +3,8 @@ import { CiShoppingCart, CiSearch, CiUser } from "react-icons/ci";
 import './shared.css'
 import { useSelector } from 'react-redux';
 const Navbar = () => {
-    const cartLength = useSelector(state => state.cart.cartItems.length)
+    const cart = useSelector(state => state.cart.cartItems)
+    const cartLength = cart.reduce((sum, data) => sum + data?.count, 0)
     return (
         <div className="navbar px-12 py-2 gap-2">
             <div className="md:w-2/3"><img src="/src/assets/Logo.png" alt="Furnique Logo" /></div>

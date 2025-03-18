@@ -24,15 +24,15 @@ const SlideCard = ({data}) => {
     <div className="flex product-img h-56 bg-gray-100 rounded-2xl my-6">
         <div className="w-1/2 relative">
         <div className="overlay-icon">
-            <div className='icon'>
-            <BsCartPlus onClick={handleAddToCart}/>
-            </div>
-            <div className='icon'>
+            <button onClick={handleAddToCart} className='icon'>
+            <BsCartPlus />
+            </button>
+            <button className='icon'>
             <IoIosExpand />
-            </div>
-            <div className='icon'>
+            </button>
+            <button className='icon'>
             <CiHeart />
-            </div>
+            </button>
         </div>
         <img src={data?.image?.[0]} alt={data.title} />
         </div>

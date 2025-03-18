@@ -27,9 +27,9 @@ const CartItem = ({data}) => {
             <td>${data?.price}</td>
             <td>
                 <div className="flex">
-                    <button onClick={() => handleAddCart(data)} className='px-3 py-1 bg-gray-300 rounded-l-md'>+</button>
+                    <button onClick={() => handleRemoveCart(data?._id)} className='px-3 py-1 bg-gray-300 rounded-l-md'> <HiMinusSm /></button>
                     <span className='px-3 py-1 border-2 border-gray-300 '>{data?.count}</span>
-                    <button onClick={() => handleRemoveCart(data?._id)} className='px-3 py-1 bg-gray-300 rounded-r-md'> <HiMinusSm /></button>
+                    <button onClick={() => handleAddCart(data)} className='px-3 py-1 bg-gray-300 rounded-r-md'>+</button>
                 </div>
             </td>
             <td>{data?.price * data?.count}</td>

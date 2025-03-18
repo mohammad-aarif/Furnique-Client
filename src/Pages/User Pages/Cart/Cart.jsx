@@ -5,6 +5,7 @@ import CartItem from './CartItem';
 
 const Cart = () => {
     const cartItems = useSelector(state => state.cart.cartItems)
+    const totalPrice = cartItems.reduce((sum, product) => sum + product.price * product.count , 0)
     return (
         <div>
             <SectionTitle title={'Your Cart'} subtitle={`You've added ${cartItems.length} item's `} />
@@ -25,6 +26,9 @@ const Cart = () => {
                             }
                         </tbody>
                     </table>
+                    <div>
+                        {totalPrice}
+                    </div>
                 </div>
             </div>
     );
