@@ -2,7 +2,7 @@
     background: #f0f1f4;
     height: 100vh;
 }
-.user-nav a{
+.user-nav a, button{
     display:block;
     padding: 10px 30px;
     transition: .3s;

@@ -14,6 +14,7 @@ const useAuth = () => {
     const [userData, setUserData] = useState(null)
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
+    const axiosPublic = useAxiosPublic();
 
     const auth = getAuth(firebaseApp)
     const navigate = useNavigate()
@@ -28,7 +29,7 @@ const useAuth = () => {
                     email,
                     role : 'user'
                 }
-                useAxiosPublic.post('/users', newUser)
+                axiosPublic.post('/users', newUser)
                 .then(res => {
                     // Confirmation and redirect to login page 
                     if(res.status === 201){
@@ -57,7 +58,7 @@ const useAuth = () => {
     const signInUser = (email, password) =>{
         signInWithEmailAndPassword(auth, email, password)
         .then(user => {
-            useAxiosPublic.get(`/users/user/${user?.user?.email}`)
+            axiosPublic.get(`/users/user/${user?.user?.email}`)
                 .then(data => setUserData({
                     ...data.data,
                     photoURL: user?.user?.photoURL
@@ -79,28 +80,29 @@ const useAuth = () => {
                     email: user?.user?.email,
                     role: 'user'
                 }
-                useAxiosPublic.post('/users', newUser)
+                axiosPublic.post('/users', newUser)
                 .then(res => {
                     // Data save to database if user not exist 
                     if(res.status === 201){
-                       setUserData({
+                       dispatch(setUser({
                         ...res.data,
                         photoURL: user?.user?.photoURL
-                       }) 
+                       }))
                     }
                     // Data Retrive from database if user exist 
                     else if(res.status === 200){
-                        console.log(user);                        
-                        useAxiosPublic.get(`/users/user/${user?.user?.email}`)
-                        .then(data => setUserData({
-                            ...data.data,
-                            photoURL: user?.user?.photoURL
-                        }))
+                        axiosPublic.get(`/users/user/${user?.user?.email}`)
+                        .then(({data}) =>{
+                            const userData = {
+                                ...data,
+                                photoURL: user?.user?.photoURL
+                            }
+                            dispatch(setUser(userData))
+                        })
                         .catch(err => setError(err))
                     }
                 })
                 .catch(err => setError(firebaseErrorMessage(err.code)))
-                // dispatch(setUser(...user))
                 setLoading(false)
             })
             .catch(err => setError(err.message))
@@ -108,21 +110,32 @@ const useAuth = () => {
 
     // Sing Out User 
     const logOut = () => {
-        signOut(auth)
+        return signOut(auth)
             .then(() =>{})
     }
     
     // Manage User Current State 
     useEffect(() => {
-        onAuthStateChanged(auth, user =>{
+        const unsubscribe = onAuthStateChanged(auth, user =>{
             if(user){
-                dispatch(setUser(userData))
+                axiosPublic.get(`/users/user/${user.email}`)
+                    .then(({data}) => {
+                        const updatedUser = {
+                            ...data,
+                            displayName: user.displayName,
+                            photoURL: user.photoURL
+                        };
+                        dispatch(setUser(updatedUser))
+                    })
+                    .catch(() => dispatch(setUser(null)))
             }
             else{
                 dispatch(removeUser())
             }
+            setLoading(false)
         })
-    },[userData, auth, dispatch])
+        return () => unsubscribe();
+    },[auth, dispatch, axiosPublic])
     
     return {
         createUser,

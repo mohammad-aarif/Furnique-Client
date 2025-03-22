@@ -6,45 +6,34 @@ const useProducts = (query) => {
     const [newArrivalData, setNewArrivalData] = useState([])
     const [featuredData, setFeaturedData] = useState([])
     const [productCount , setProductCount] = useState(0)
+    const axiosPublic = useAxiosPublic()
 
     // Getting Total Number of Products 
     useEffect(
         () => {
-            useAxiosPublic.get('/products/count')
+            axiosPublic.get('/products/count')
             .then(data => setProductCount(data.data.count))
-        }, []
+        }, [axiosPublic]
     )
     // New Arrival Products 
     useEffect(
         () => {
-            useAxiosPublic.get('/products/new-arrival')
+            axiosPublic.get('/products/new-arrival')
             .then(data => setNewArrivalData(data.data))
-        }, []
+        }, [axiosPublic]
     )
     // Featured Products 
     useEffect(
         () => {
-            useAxiosPublic.get(`/products/featured?home=${query}`)
+            axiosPublic.get(`/products/featured?home=${query}`)
             .then(data => setFeaturedData(data.data))
-        }, [query]
+        }, [query, axiosPublic]
     )
-    // Single Product 
-    // useEffect(
-    //     (id) => {
-    //         useAxiosPublic.get(`/products/item/`)
-    //         .then(data => setFeaturedData(data.data))
-    //     }, [query]
-    // )
-    const product = id => {
-        console.log(id);
-        
-    }
 
     return {
         newArrivalData,
         featuredData,
         productCount,
-        product
     }
 };
 

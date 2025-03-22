@@ -4,6 +4,7 @@ import { useSelector } from 'react-redux';
 
 const useProductFilter = (pageNumber) => {
     const [filteredProduct, setFilteredProduct] = useState([])
+    const axiosPublic = useAxiosPublic()
 
     const {categories, sortBy} = useSelector(state => state.filter)
     const queryBuilder = () =>{
@@ -22,9 +23,9 @@ const useProductFilter = (pageNumber) => {
     
     useEffect(
         () => {
-            useAxiosPublic.get(`/products?${query}`)
+            axiosPublic.get(`/products?${query}`)
             .then(data => setFilteredProduct(data.data))
-        }, [query, pageNumber]
+        }, [query, pageNumber, axiosPublic]
     )
 
     return filteredProduct
