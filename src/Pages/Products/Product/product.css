@@ -1,0 +1,11 @@
+.specification-table tr td{
+    vertical-align: top;
+}
+.specification-table tr td:first-child{
+    font-weight: bold;
+}
+.specification-table tr td:last-child{
+    padding: 0 15px;
+    font-weight: 100;
+    color: #364153;
+}
