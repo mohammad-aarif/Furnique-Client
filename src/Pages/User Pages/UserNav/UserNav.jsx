@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 const UserNav = () => {    
     return (
-        <div className='flex w-2/3 justify-center mx-auto font-medium user-nav'>
+        <div className='user-nav pt-20'>
             <NavLink to='/user/cart' className=''> Cart Items</NavLink>
             <NavLink to='/user/liked' className='' >Liked</NavLink>
             <NavLink to='/user/orders' className= '' >Orders</NavLink>
