@@ -31,7 +31,7 @@ const Navbar = () => {
                         {cartLength ? <span className='absolute'>{cartLength}</span>: ''}
                     </NavLink>
                 </div>
-                <CiUser />
+                <NavLink to='/auth'><CiUser /></NavLink>
             </div>
         </div>
     );

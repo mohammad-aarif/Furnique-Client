@@ -1,14 +1,17 @@
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import GoogleSingInBtn from '../../Components/Buttons/GoogleSingInBtn';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/Auth/useAuth';
 
 const SignIn = () => {
     const {register, handleSubmit, reset, formState: { errors }} = useForm()
-    const {signInUser, error} = useAuth()
-    const handleSignInData = (data) => {
-        signInUser(data.email, data.password)
+    const {signInUser, error} = useAuth();
 
+    const location = useLocation();
+    const redirect = location?.state?.from?.pathname || '/user'
+
+    const handleSignInData = (data) => {
+        signInUser(data.email, data.password, redirect)
         reset()
     }
     return (
@@ -50,7 +53,7 @@ const SignIn = () => {
                 </div>
                 <input type="submit" value='Sign In' />
             </form>
-            <GoogleSingInBtn />
+            <GoogleSingInBtn redirect={redirect}/>
             <p className='py-2 text-gray-200 text-sm italic'>Don't Have an Account? <Link to='/auth/sign-up'>Sign Up</Link></p>
         </div>
     );

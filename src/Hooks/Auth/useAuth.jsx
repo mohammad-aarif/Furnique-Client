@@ -3,7 +3,7 @@ import { firebaseApp } from "../../Firebase/firebase.config";
 import useAxiosPublic from "../Axios/useAxiosPublic";
 import { firebaseErrorMessage } from "../../Firebase/firebase.error";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { redirect, useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { setUser, removeUser } from "../../Redux/Reducer/userSlice";
@@ -11,7 +11,6 @@ import { setUser, removeUser } from "../../Redux/Reducer/userSlice";
 
 const useAuth = () => {
     const dispatch = useDispatch()
-    const [userData, setUserData] = useState(null)
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState('');
     const axiosPublic = useAxiosPublic();
@@ -20,7 +19,7 @@ const useAuth = () => {
     const navigate = useNavigate()
 
     // Create User by email and Password 
-    const createUser = (fullName, email, password) => {
+    const createUser = (fullName, email, password, redirect) => {
         createUserWithEmailAndPassword(auth, email, password)
             .then(() => {
                 // User Data send to database 
@@ -30,39 +29,23 @@ const useAuth = () => {
                     role : 'user'
                 }
                 axiosPublic.post('/users', newUser)
-                .then(res => {
-                    // Confirmation and redirect to login page 
-                    if(res.status === 201){
-                        Swal.fire({
-                            title: "Hurrah!",
-                            text: "Your Account Register Successfully",
-                            iconHtml: '<img src="/src/assets/check.gif">',
-                            confirmButtonText: "Sign In",
-                            color: '#fff',
-                            customClass: {
-                                popup: "popUp",
-                                confirmButton: "popUp-btn",
-                              },
-                            }).then(response => {
-                            response.isConfirmed ? navigate('/auth') : navigate('/auth')
-                            });                        
-                            setLoading(false)
-                    }
-                })
+                .then(() => navigate(redirect, {replace:true}))
                 .catch(err => setError(err.message))
             })
             .catch(err => setError(firebaseErrorMessage(err.code)))
     }
 
     // Sign in with Email and Password 
-    const signInUser = (email, password) =>{
+    const signInUser = (email, password, redirect) =>{
         signInWithEmailAndPassword(auth, email, password)
         .then(user => {
             axiosPublic.get(`/users/user/${user?.user?.email}`)
-                .then(data => setUserData({
-                    ...data.data,
+                .then(({data}) => dispatch(setUser({
+                    ...data,
                     photoURL: user?.user?.photoURL
-                }))
+                    }))
+                )
+                .then(() => navigate(redirect, {replace: true}))
                 .catch(err => setError(err))
             setLoading(false)
         })
@@ -71,7 +54,7 @@ const useAuth = () => {
 
     // Sign in With Google
     const googleProvider = new GoogleAuthProvider()
-    const googleSignIn = () =>{
+    const googleSignIn = (redirect) =>{
         signInWithPopup(auth, googleProvider)
             .then(user => {
                 // Data sent to Database 
@@ -102,6 +85,7 @@ const useAuth = () => {
                         .catch(err => setError(err))
                     }
                 })
+                .then(() => navigate(redirect, {replace: true}))
                 .catch(err => setError(firebaseErrorMessage(err.code)))
                 setLoading(false)
             })
@@ -122,7 +106,6 @@ const useAuth = () => {
                     .then(({data}) => {
                         const updatedUser = {
                             ...data,
-                            displayName: user.displayName,
                             photoURL: user.photoURL
                         };
                         dispatch(setUser(updatedUser))

@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, redirect, useLocation } from 'react-router-dom';
 import GoogleSingInBtn from '../../Components/Buttons/GoogleSingInBtn';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/Auth/useAuth';
@@ -7,8 +7,11 @@ const SignUp = () => {
     const {handleSubmit, register, formState: { errors }} = useForm()
     const {createUser, setLoading, error} = useAuth()
 
+    const location = useLocation();
+    const redirect = location?.state?.from?.pathname || '/user'
+
     const handleSignUpData = (data) => {
-        createUser(data.name, data.email, data.password)
+        createUser(data.name, data.email, data.password, redirect)
         setLoading(true)
     }   
     return (

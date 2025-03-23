@@ -1,9 +1,9 @@
 import useAuth from '../../Hooks/Auth/useAuth';
 import './buttons.css'
-const GoogleSingInBtn = () => {
+const GoogleSingInBtn = ({redirect}) => {
     const {googleSignIn} = useAuth();
     return (
-        <button onClick={googleSignIn} className='googleBtn'>Login with Google</button>
+        <button onClick={() => googleSignIn(redirect)} className='googleBtn'>Login with Google</button>
     );
 };
 
