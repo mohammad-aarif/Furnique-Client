@@ -2,8 +2,11 @@ import { NavLink } from 'react-router-dom';
 import { CiShoppingCart, CiSearch, CiUser } from "react-icons/ci";
 import './shared.css'
 import { useSelector } from 'react-redux';
+import UserAvatar from '../../Components/UserAvatar/UserAvatar';
 const Navbar = () => {
     const cart = useSelector(state => state.cart.cartItems)
+    const user = useSelector(state => state.auth?.user)
+
     const cartLength = cart.reduce((sum, data) => sum + data?.count, 0)
     return (
         <div className="navbar px-12 py-2 gap-2">
@@ -31,7 +34,7 @@ const Navbar = () => {
                         {cartLength ? <span className='absolute'>{cartLength}</span>: ''}
                     </NavLink>
                 </div>
-                <NavLink to='/auth'><CiUser /></NavLink>
+                <NavLink to='/user/profile'>{user ? <UserAvatar /> : <CiUser />}</NavLink>
             </div>
         </div>
     );

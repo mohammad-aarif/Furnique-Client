@@ -3,7 +3,7 @@ import { firebaseApp } from "../../Firebase/firebase.config";
 import useAxiosPublic from "../Axios/useAxiosPublic";
 import { firebaseErrorMessage } from "../../Firebase/firebase.error";
 import Swal from "sweetalert2";
-import { redirect, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { createUserWithEmailAndPassword, getAuth, GoogleAuthProvider, onAuthStateChanged, signInWithEmailAndPassword, signInWithPopup, signOut } from "firebase/auth";
 import { useDispatch } from "react-redux";
 import { setUser, removeUser } from "../../Redux/Reducer/userSlice";

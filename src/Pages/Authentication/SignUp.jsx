@@ -1,4 +1,4 @@
-import { Link, redirect, useLocation } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import GoogleSingInBtn from '../../Components/Buttons/GoogleSingInBtn';
 import { useForm } from 'react-hook-form';
 import useAuth from '../../Hooks/Auth/useAuth';
