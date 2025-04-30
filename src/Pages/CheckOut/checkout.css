@@ -1,0 +1,23 @@
+.check-out input{
+    border: 1px solid #06340b45;
+    padding: 5px;
+    margin: 5px;
+    width: 100%;
+}
+.check-out input:focus{
+    border: 1px solid #00b715;
+}
+
+/* Progress Bar  */
+.line{
+    height: 1vh;
+    width: 10vw;
+}
+.progress-bg{
+    background: rgb(105, 105, 105);
+}
+
+/* Billing Address  */
+.address-check-box{
+    max-width: 3%;
+}

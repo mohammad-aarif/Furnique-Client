@@ -31,7 +31,7 @@ const Product = () => {
 
 
     return (
-<div className="flex p-3 py-12">
+        <div className="flex p-3 py-12">
           <div className="w-1/3">
             <div>
               <img className="p-1" src={bigImage} alt="" />

@@ -15,6 +15,10 @@ import Liked from "../Pages/User Pages/Liked/Liked";
 import Profile from "../Pages/User Pages/Profile/Profile";
 import Product from "../Pages/Products/Product/Product";
 import UserRoute from "./UserRoute";
+import CheckOut from "../Pages/CheckOut/CheckOut";
+import Shipping from "../Pages/CheckOut/Shipping";
+import Billing from "../Pages/CheckOut/Billing";
+import Payment from "../Pages/CheckOut/Payment";
 
 export const router = createBrowserRouter([
     {
@@ -83,6 +87,23 @@ export const router = createBrowserRouter([
             path: 'sign-up',
             element: <SignUp />
            }, 
+        ]
+    },
+    {
+        path: '/check-out',
+        element: <CheckOut />,
+        errorElement: <Error />,
+        children:[
+            {path: '',
+            element: <Shipping />},
+            {
+                path: 'billing',
+                element: <Billing />
+            },
+            {
+                path: 'payment', 
+                element: <Payment />
+            }
         ]
     }
 ])
